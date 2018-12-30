@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MillionaireGame.Question.Domain
+﻿namespace MillionaireGame.Question.Domain
 {
     public class Answer
     {
