@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionaireGame.Question.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionaireGame.Question.Persistence", "MillionaireGame.Question\MillionaireGame.Question.Persistence\MillionaireGame.Question.Persistence.csproj", "{9F3AB9D1-6581-4670-B82B-BF5CEDDD5D16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionaireGame.Question.Application.Test", "MillionaireGame.Question\MillionaireGame.Question.Application.Test\MillionaireGame.Question.Application.Test.csproj", "{C3C82973-AFD3-4F6D-BE74-A910A73F700A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9F3AB9D1-6581-4670-B82B-BF5CEDDD5D16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F3AB9D1-6581-4670-B82B-BF5CEDDD5D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F3AB9D1-6581-4670-B82B-BF5CEDDD5D16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3C82973-AFD3-4F6D-BE74-A910A73F700A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3C82973-AFD3-4F6D-BE74-A910A73F700A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3C82973-AFD3-4F6D-BE74-A910A73F700A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3C82973-AFD3-4F6D-BE74-A910A73F700A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
