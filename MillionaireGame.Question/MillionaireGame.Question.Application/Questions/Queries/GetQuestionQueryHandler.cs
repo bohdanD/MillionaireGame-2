@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using MillionaireGame.Question.Application.DataContracts;
 using MillionaireGame.Question.Application.Questions.Models;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,7 +17,17 @@ namespace MillionaireGame.Question.Application.Questions.Queries
 
         public Task<QuestionDto> Handle(GetQuestionQuery request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var result = _repository.GetSingle(q => q.ComplexityId == request.CopmlexityId);
+
+            var dto = new QuestionDto
+            {
+                Answers = result.Answers,
+                Complexity = result.Complexity?.Name,
+                ComplexityId = result.ComplexityId,
+                QuestionText = result.QuestionText
+            };
+
+            return Task.Run(() => dto);
         }
     }
 }
