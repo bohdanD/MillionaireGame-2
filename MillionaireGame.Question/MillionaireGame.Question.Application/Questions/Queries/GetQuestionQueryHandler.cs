@@ -15,19 +15,22 @@ namespace MillionaireGame.Question.Application.Questions.Queries
             _repository = repository;
         }
 
-        public Task<QuestionDto> Handle(GetQuestionQuery request, CancellationToken cancellationToken)
+        public async Task<QuestionDto> Handle(GetQuestionQuery request, CancellationToken cancellationToken)
         {
-            var result = _repository.GetSingle(q => q.ComplexityId == request.CopmlexityId);
-
-            var dto = new QuestionDto
+            var result = await _repository.GetSingle(q => q.ComplexityId == request.CopmlexityId);
+            QuestionDto dto = null;
+            if (result != null)
             {
-                Answers = result.Answers,
-                Complexity = result.Complexity?.Name,
-                ComplexityId = result.ComplexityId,
-                QuestionText = result.QuestionText
-            };
+                dto = new QuestionDto
+                {
+                    Answers = result.Answers,
+                    Complexity = result.Complexity?.Name,
+                    ComplexityId = result.ComplexityId,
+                    QuestionText = result.QuestionText
+                };
+            }
 
-            return Task.Run(() => dto);
+            return dto;
         }
     }
 }

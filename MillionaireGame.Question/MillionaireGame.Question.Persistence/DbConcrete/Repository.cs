@@ -1,8 +1,10 @@
-﻿using MillionaireGame.Question.Application.DataContracts;
+﻿using Microsoft.EntityFrameworkCore;
+using MillionaireGame.Question.Application.DataContracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace MillionaireGame.Question.Persistence.DbConcrete
 {
@@ -15,14 +17,14 @@ namespace MillionaireGame.Question.Persistence.DbConcrete
             _questionDbContext = questionDbContext;
         }
 
-        public IEnumerable<T> GetMany(Expression<Func<T, bool>> expression)
+        public async Task<IEnumerable<T>> GetMany(Expression<Func<T, bool>> expression)
         {
-            return _questionDbContext.Set<T>().Where(expression).AsEnumerable();
+            return await _questionDbContext.Set<T>().Where(expression).ToListAsync();
         }
 
-        public T GetSingle(Expression<Func<T, bool>> expression)
+        public async Task<T> GetSingle(Expression<Func<T, bool>> expression)
         {
-            return _questionDbContext.Set<T>().Where(expression).FirstOrDefault();
+            return await _questionDbContext.Set<T>().Where(expression).FirstOrDefaultAsync();
         }
     }
 }
