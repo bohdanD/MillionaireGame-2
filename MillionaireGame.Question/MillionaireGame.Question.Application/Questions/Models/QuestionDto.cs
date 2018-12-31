@@ -1,5 +1,4 @@
-﻿using MillionaireGame.Question.Domain;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace MillionaireGame.Question.Application.Questions.Models
 {
@@ -11,6 +10,6 @@ namespace MillionaireGame.Question.Application.Questions.Models
 
         public string Complexity { get; set; }
 
-        public IEnumerable<Answer> Answers { get; set; }
+        public IEnumerable<AnswerDto> Answers { get; set; }
     }
 }

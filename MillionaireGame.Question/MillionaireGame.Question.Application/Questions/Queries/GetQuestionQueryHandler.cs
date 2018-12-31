@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using MillionaireGame.Question.Application.DataContracts;
 using MillionaireGame.Question.Application.Questions.Models;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -23,7 +24,7 @@ namespace MillionaireGame.Question.Application.Questions.Queries
             {
                 dto = new QuestionDto
                 {
-                    Answers = result.Answers,
+                    Answers = result.Answers.Select(a => new AnswerDto() { AnswerId = a.AnswerId, AnswerText = a.AnswerText }),
                     Complexity = result.Complexity?.Name,
                     ComplexityId = result.ComplexityId,
                     QuestionText = result.QuestionText
