@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using MillionaireGame.Question.Application.DataContracts;
-using MillionaireGame.Question.Application.Questions.Models;
+using MillionaireGame.Question.Application.Models;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;

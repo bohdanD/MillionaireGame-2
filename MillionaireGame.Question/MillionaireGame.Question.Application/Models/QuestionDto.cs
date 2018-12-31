@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MillionaireGame.Question.Application.Questions.Models
+namespace MillionaireGame.Question.Application.Models
 {
     public class QuestionDto
     {

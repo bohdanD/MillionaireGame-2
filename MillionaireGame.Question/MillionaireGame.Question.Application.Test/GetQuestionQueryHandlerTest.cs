@@ -66,6 +66,7 @@ namespace MillionaireGame.Question.Application.Test
             Assert.True(result.Answers.Count() == 4);
             Assert.True(result.Answers.All(a => !string.IsNullOrWhiteSpace(a.AnswerText)));
             Assert.True(result.Answers.All(a => a.AnswerId != 0));
+            Assert.True(result.Answers.All(a => a.IsCorrect == null));
         }
     }
 }

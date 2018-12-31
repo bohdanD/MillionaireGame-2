@@ -17,6 +17,11 @@ namespace MillionaireGame.Question.Persistence.DbConcrete
             _questionDbContext = questionDbContext;
         }
 
+        public Task<T> Find(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<T>> GetMany(Expression<Func<T, bool>> expression)
         {
             return await _questionDbContext.Set<T>().Where(expression).ToListAsync();

@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using MillionaireGame.Question.Application.Questions.Models;
+using MillionaireGame.Question.Application.Models;
 
 namespace MillionaireGame.Question.Application.Questions.Queries
 {

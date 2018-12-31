@@ -9,5 +9,6 @@ namespace MillionaireGame.Question.Application.DataContracts
     {
         Task<T> GetSingle(Expression<Func<T, bool>> expression);
         Task<IEnumerable<T>> GetMany(Expression<Func<T, bool>> expression);
+        Task<T> Find(int id);
     }
 }
