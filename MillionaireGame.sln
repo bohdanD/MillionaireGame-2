@@ -11,7 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MillionaireGame.Question.Pe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MillionaireGame.Question.Application.Test", "MillionaireGame.Question\MillionaireGame.Question.Application.Test\MillionaireGame.Question.Application.Test.csproj", "{C3C82973-AFD3-4F6D-BE74-A910A73F700A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionaireGame.Question.Persistence.Test", "MillionaireGame.Question\MillionaireGame.Question.Persistence.Test\MillionaireGame.Question.Persistence.Test.csproj", "{B586EA59-792B-4D57-9823-337C5074FD55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MillionaireGame.Question.Persistence.Test", "MillionaireGame.Question\MillionaireGame.Question.Persistence.Test\MillionaireGame.Question.Persistence.Test.csproj", "{B586EA59-792B-4D57-9823-337C5074FD55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionaireGame.Player.Domain", "MillionaireGame.Player\MillionaireGame.Player.Domain\MillionaireGame.Player.Domain.csproj", "{CDFD8213-CC77-4519-A758-BAA19782FB04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionaireGame.Player.Application", "MillionaireGame.Player\MillionaireGame.Player.Application\MillionaireGame.Player.Application.csproj", "{74DA7B8A-0C97-4B0C-A772-E654678F2C7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionaireGame.Player.Application.Test", "MillionaireGame.Player\MillionaireGame.Player.Application.Test\MillionaireGame.Player.Application.Test.csproj", "{A1D43BA8-C78C-49CA-BDE3-013B821D7BAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{B586EA59-792B-4D57-9823-337C5074FD55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B586EA59-792B-4D57-9823-337C5074FD55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B586EA59-792B-4D57-9823-337C5074FD55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDFD8213-CC77-4519-A758-BAA19782FB04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFD8213-CC77-4519-A758-BAA19782FB04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFD8213-CC77-4519-A758-BAA19782FB04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFD8213-CC77-4519-A758-BAA19782FB04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74DA7B8A-0C97-4B0C-A772-E654678F2C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74DA7B8A-0C97-4B0C-A772-E654678F2C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74DA7B8A-0C97-4B0C-A772-E654678F2C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74DA7B8A-0C97-4B0C-A772-E654678F2C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1D43BA8-C78C-49CA-BDE3-013B821D7BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D43BA8-C78C-49CA-BDE3-013B821D7BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1D43BA8-C78C-49CA-BDE3-013B821D7BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1D43BA8-C78C-49CA-BDE3-013B821D7BAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
