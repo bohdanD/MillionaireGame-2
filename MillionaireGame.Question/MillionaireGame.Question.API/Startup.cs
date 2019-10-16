@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using MediatR;
 using MediatR.Pipeline;
 using System.Reflection;
+using Microsoft.Extensions.Hosting;
 
 namespace MillionaireGame.Question.API
 {
@@ -28,7 +29,8 @@ namespace MillionaireGame.Question.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
+                .AddMvcOptions(options => options.EnableEndpointRouting = false);
 
             //// Add MediatR
             //services.AddMediatR(typeof(GetProductQueryHandler).GetTypeInfo().Assembly);
@@ -37,7 +39,7 @@ namespace MillionaireGame.Question.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
