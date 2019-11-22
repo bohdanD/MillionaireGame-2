@@ -15,9 +15,16 @@ namespace MillionaireGame.Player.Application.Players.Commands
             _repository = repository;
         }
 
-        public Task<Unit> Handle(CreatePlayerCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreatePlayerCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            if (request == null)
+            {
+                return Unit.Value;
+            }
+
+            await _repository.Add(new Domain.Player { Name = request.PlayerName });
+
+            return Unit.Value;
         }
     }
 }
