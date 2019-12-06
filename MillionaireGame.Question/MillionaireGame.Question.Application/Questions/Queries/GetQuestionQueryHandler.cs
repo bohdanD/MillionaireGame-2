@@ -24,7 +24,7 @@ namespace MillionaireGame.Question.Application.Questions.Queries
             {
                 dto = new QuestionDto
                 {
-                    Answers = result.Answers.Select(a => new AnswerDto() { AnswerId = a.AnswerId, AnswerText = a.AnswerText }),
+                    Answers = result.Answers?.Select(a => new AnswerDto() { AnswerId = a.AnswerId, AnswerText = a.AnswerText }),
                     Complexity = result.Complexity?.Name,
                     ComplexityId = result.ComplexityId,
                     QuestionText = result.QuestionText

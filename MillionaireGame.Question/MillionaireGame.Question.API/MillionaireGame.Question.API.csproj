@@ -9,7 +9,13 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="7.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MillionaireGame.Question.Application\MillionaireGame.Question.Application.csproj" />
+    <ProjectReference Include="..\MillionaireGame.Question.Persistence\MillionaireGame.Question.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

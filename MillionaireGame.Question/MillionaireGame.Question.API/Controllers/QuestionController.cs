@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using MillionaireGame.Question.Application.Models;
+using MillionaireGame.Question.Application.Questions.Queries;
 
 namespace MillionaireGame.Question.API.Controllers
 {
@@ -13,12 +15,17 @@ namespace MillionaireGame.Question.API.Controllers
     {
         private IMediator _mediator;
 
-
+        public QuestionController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<QuestionDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            var query = new GetQuestionQuery { CopmlexityId = 1 };
+            var result = await _mediator.Send(query);
+            return result;
         }
 
         // GET api/values/5

@@ -14,6 +14,9 @@ using MediatR;
 using MediatR.Pipeline;
 using System.Reflection;
 using Microsoft.Extensions.Hosting;
+using MillionaireGame.Question.Application.Questions.Queries;
+using MillionaireGame.Question.Application.DataContracts;
+using MillionaireGame.Question.Persistence.DbConcrete;
 
 namespace MillionaireGame.Question.API
 {
@@ -33,9 +36,12 @@ namespace MillionaireGame.Question.API
                 .AddMvcOptions(options => options.EnableEndpointRouting = false);
 
             //// Add MediatR
-            //services.AddMediatR(typeof(GetProductQueryHandler).GetTypeInfo().Assembly);
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
+            services
+                .AddMediatR(Assembly.GetAssembly(typeof(GetQuestionQuery)), Assembly.GetExecutingAssembly());
+
+            //dependencies
+            services.AddTransient(typeof(IRepository<Domain.Question>), typeof(RepositoryMock));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
