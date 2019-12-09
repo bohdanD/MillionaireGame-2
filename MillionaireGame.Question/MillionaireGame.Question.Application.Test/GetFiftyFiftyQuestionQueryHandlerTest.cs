@@ -24,7 +24,7 @@ namespace MillionaireGame.Question.Application.Test
             var query = new GetFiftyFiftyQuestionQuery() { QuestionId = 1 };
             _mock.Setup(r => r.Find(1)).Returns(Task.Run(() => new Domain.Question()
             {
-                QuestionId = 1,
+                Id = 1,
                 QuestionText = "dsdfdf",
                 Answers = new List<Domain.Answer>()
                 {

@@ -25,7 +25,7 @@ namespace MillionaireGame.Question.Application.Test
         {
             var query = new GetQuestionQuery() { CopmlexityId = 1 };
             _mock.Setup(r => r.GetSingle(It.IsAny<Expression<Func<Domain.Question, bool>>>()))
-                .Returns(Task.Run(() => new Domain.Question() { QuestionId = 1, ComplexityId = 1 }));
+                .Returns(Task.Run(() => new Domain.Question() { Id = 1, ComplexityId = 1 }));
             var handler = new GetQuestionQueryHandler(_mock.Object);
 
             var result = await handler.Handle(query, CancellationToken.None);
@@ -57,7 +57,7 @@ namespace MillionaireGame.Question.Application.Test
                 new Answer() { AnswerId = 4, AnswerText = "a4", IsCorrect = false }
             };
             _mock.Setup(r => r.GetSingle(It.IsAny<Expression<Func<Domain.Question, bool>>>()))
-                .Returns(Task.Run(() => new Domain.Question() { QuestionId = 1, ComplexityId = 1, Answers = answers }));
+                .Returns(Task.Run(() => new Domain.Question() { Id = 1, ComplexityId = 1, Answers = answers }));
             var handler = new GetQuestionQueryHandler(_mock.Object);
 
             var result = await handler.Handle(query, CancellationToken.None);

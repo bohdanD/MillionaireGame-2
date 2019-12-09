@@ -1,15 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using MillionaireGame.Question.Domain.Events;
+using System.Collections.Generic;
 
 namespace MillionaireGame.Question.Domain
 {
-    public class Question
+    public class Question : Entity
     {
         public Question()
         {
             Answers = new HashSet<Answer>();
         }
 
-        public int QuestionId { get; set; }
+        public override int Id { get; set; }
 
         public string QuestionText { get; set; }
 
@@ -18,5 +19,10 @@ namespace MillionaireGame.Question.Domain
         public Complexity Complexity { get; set; }
 
         public ICollection<Answer> Answers { get; set; }
+
+        public void SetUnAvailableStatusForUser(int userId)
+        {
+            AddDomainEvent(new QuestionAvailabilityForUserChangedDomainEvent(Id, userId, false));
+        }
     }
 }

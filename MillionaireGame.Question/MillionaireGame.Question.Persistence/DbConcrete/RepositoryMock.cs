@@ -22,7 +22,7 @@ namespace MillionaireGame.Question.Persistence.DbConcrete
 
         public Task<Domain.Question> GetSingle(Expression<Func<Domain.Question, bool>> expression)
         {
-            return Task.Run(() => new Domain.Question { Answers = null, QuestionId = 1, QuestionText = "blah blah", ComplexityId = 1 });
+            return Task.Run(() => new Domain.Question { Answers = null, Id = 1, QuestionText = "blah blah", ComplexityId = 1 });
         }
     }
 }

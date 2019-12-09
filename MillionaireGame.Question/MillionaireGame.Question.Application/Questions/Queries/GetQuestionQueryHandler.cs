@@ -31,6 +31,8 @@ namespace MillionaireGame.Question.Application.Questions.Queries
                 };
             }
 
+            result.SetUnAvailableStatusForUser(1);
+
             return dto;
         }
     }
