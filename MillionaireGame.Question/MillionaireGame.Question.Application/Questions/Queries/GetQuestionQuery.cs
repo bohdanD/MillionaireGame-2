@@ -6,5 +6,7 @@ namespace MillionaireGame.Question.Application.Questions.Queries
     public class GetQuestionQuery : IRequest<QuestionDto>
     {
         public int CopmlexityId { get; set; }
+
+        public int UserId { get; set; }
     }
 }

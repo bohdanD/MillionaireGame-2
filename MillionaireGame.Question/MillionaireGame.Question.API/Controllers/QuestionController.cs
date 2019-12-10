@@ -19,38 +19,19 @@ namespace MillionaireGame.Question.API.Controllers
         {
             _mediator = mediator;
         }
-        // GET api/values
-        [HttpGet]
-        public async Task<QuestionDto> Get()
+
+        [HttpGet("{id}")]
+        public async Task<QuestionDto> Get(int id)
         {
-            var query = new GetQuestionQuery { CopmlexityId = 1 };
+            var query = new GetQuestionQuery { CopmlexityId = 1, UserId = id };
             var result = await _mediator.Send(query);
             return result;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
