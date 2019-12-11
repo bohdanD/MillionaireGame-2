@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MillionaireGame.Question.Application.DomainEventsHandlers
 {
-    class QuestionAvailabilityForUserChangedDomainEventHandler : INotificationHandler<QuestionAvailabilityForUserChangedDomainEvent>
+    public class QuestionAvailabilityForUserChangedDomainEventHandler : INotificationHandler<QuestionAvailabilityForUserChangedDomainEvent>
     {
         public Task Handle(QuestionAvailabilityForUserChangedDomainEvent notification, CancellationToken cancellationToken)
         {

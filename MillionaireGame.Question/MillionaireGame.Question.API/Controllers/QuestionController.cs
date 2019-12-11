@@ -20,10 +20,10 @@ namespace MillionaireGame.Question.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("{id}")]
-        public async Task<QuestionDto> Get(int id)
+        [HttpGet("{id}/{complexity}")]
+        public async Task<QuestionDto> Get(int id, int complexity)
         {
-            var query = new GetQuestionQuery { CopmlexityId = 1, UserId = id };
+            var query = new GetQuestionQuery { CopmlexityId = complexity, UserId = id };
             var result = await _mediator.Send(query);
             return result;
         }
