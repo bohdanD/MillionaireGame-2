@@ -3,8 +3,9 @@ using MillionaireGame.Question.Application.Models;
 
 namespace MillionaireGame.Question.Application.Answers.Queries
 {
-    public class GetAnswerCorrectnessQuery : IRequest<AnswerDto>
+    public class GetCorrectAnswerQuery : IRequest<AnswerDto>
     {
-        public int AnswerId { get; set; }
+        public int UserId { get; set; }
+        public int QuestionId { get; set; }
     }
 }

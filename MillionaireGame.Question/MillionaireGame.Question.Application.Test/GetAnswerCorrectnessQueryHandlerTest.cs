@@ -19,10 +19,10 @@ namespace MillionaireGame.Question.Application.Test
         [Fact]
         public async void GetAnswerCorrectness_Test()
         {
-            var query = new GetAnswerCorrectnessQuery() { AnswerId = 1 };
+            var query = new GetCorrectAnswerQuery() { AnswerId = 1 };
             _mock.Setup(r => r.Find(1))
                 .Returns(Task.Run(() => new Answer() { AnswerId = 1, AnswerText = "text", IsCorrect = true }));
-            var handler = new GetAnswerCorrectnessQueryHandler(_mock.Object);
+            var handler = new GetCorrectAnswerQueryHandler(_mock.Object);
 
             var result = await handler.Handle(query, CancellationToken.None);
             Assert.NotNull(result);
@@ -33,10 +33,10 @@ namespace MillionaireGame.Question.Application.Test
         [Fact]
         public async void GetAnswerCorrectnessFail_Test()
         {
-            var query = new GetAnswerCorrectnessQuery();
+            var query = new GetCorrectAnswerQuery();
             _mock.Setup(r => r.Find(0))
                 .Returns(Task.Run(() => default(Answer)));
-            var handler = new GetAnswerCorrectnessQueryHandler(_mock.Object);
+            var handler = new GetCorrectAnswerQueryHandler(_mock.Object);
 
             var result = await handler.Handle(query, CancellationToken.None);
             Assert.Null(result);

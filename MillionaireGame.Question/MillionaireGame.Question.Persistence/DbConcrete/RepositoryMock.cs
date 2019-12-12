@@ -12,7 +12,14 @@ namespace MillionaireGame.Question.Persistence.DbConcrete
     {
         public Task<Domain.Question> Find(int id)
         {
-            throw new NotImplementedException();
+            var answers = new List<Answer>
+            {
+                new Answer { IsCorrect = false, AnswerId = 1 },
+                new Answer { IsCorrect = false, AnswerId = 2 },
+                new Answer { IsCorrect = true, AnswerId = 3 },
+                new Answer { IsCorrect = false, AnswerId = 4 }
+            };
+            return Task.Run(() => new Domain.Question { Answers = answers, Id = 1, QuestionText = "blah blah", ComplexityId = 1 });
         }
 
         public Task<IEnumerable<Domain.Question>> GetMany(Expression<Func<Domain.Question, bool>> expression)
@@ -22,7 +29,14 @@ namespace MillionaireGame.Question.Persistence.DbConcrete
 
         public Task<Domain.Question> GetSingle(Expression<Func<Domain.Question, bool>> expression)
         {
-            return Task.Run(() => new Domain.Question { Answers = null, Id = 1, QuestionText = "blah blah", ComplexityId = 1 });
+            var answers = new List<Answer>
+            {
+                new Answer { IsCorrect = false, AnswerId = 1 },
+                new Answer { IsCorrect = false, AnswerId = 2 },
+                new Answer { IsCorrect = true, AnswerId = 3 },
+                new Answer { IsCorrect = false, AnswerId = 4 }
+            };
+            return Task.Run(() => new Domain.Question { Answers = answers, Id = 1, QuestionText = "blah blah", ComplexityId = 1 });
         }
     }
 }
